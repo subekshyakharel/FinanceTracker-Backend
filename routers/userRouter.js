@@ -48,7 +48,7 @@ router.post("/login", async (req, res, next) => {
 
       if (user?._id) {
         // 3. match the password
-        const isMatched = comparePassword(password, user.password);
+        const isMatched = await comparePassword(password, user.password);
         if (isMatched) {
           // the user actually authenticated
 
@@ -63,6 +63,10 @@ router.post("/login", async (req, res, next) => {
             message: "Logged in successfully",
             user: user,
             accessJWT,
+          });
+        } else {
+          res.status(401).json({
+            error: "Invalid email or password",
           });
         }
         return;
