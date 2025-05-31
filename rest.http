@@ -2,7 +2,8 @@
 
 ### User
 ### Get user
-GET http://localhost:8000/
+GET http://localhost:8000/api/v1/users
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InhAZ21haWwuY29tIiwiaWF0IjoxNzQ4MDE1NTMyLCJleHAiOjE3NDgxMDE5MzJ9.EsogoAzTaSPrKIioHtLB8jGlLXPWBTazksY72FO7pPU
 
 
 ### Post new user
@@ -11,7 +12,7 @@ Content-Type: application/json
 
 {
     "name":"subekshya", 
-    "email":"xa@gmail.com", 
+    "email":"x@gmail.com", 
     "password":"123s"
 }
 
@@ -20,8 +21,32 @@ POST http://localhost:8000/api/v1/users/login
 Content-Type: application/json
 
 { 
-    "email":"xa@gmail.com", 
-    "password":"123s"
+    "email":"subekshyakharel922@gmail.com", 
+    "password":"123"
 }
 
 ###Transactions
+# post transacationo
+POST http://localhost:8000/api/v1/transactions
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InhAZ21haWwuY29tIiwiaWF0IjoxNzQ4NDQ1ODE2LCJleHAiOjE3NDg1MzIyMTZ9.dizIkb3nIZ-B7fwprXReEAyMoxQucNPSGrB8R0Ebx4A
+
+{
+    "type":"income", 
+    "title":"salary", 
+    "amount":"234", 
+    "tdate":"2025-04-13"
+}
+
+
+### Get the transactinons based on the user
+GET http://localhost:8000/api/v1/transactions
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1YmVrc2h5YWtoYXJlbDkyMkBnbWFpbC5jb20iLCJpYXQiOjE3NDg0OTAxNDAsImV4cCI6MTc0ODU3NjU0MH0.olZmNjKAQuZjkxQNJKsypc-B7rui8sp1WJDasJSfMZM
+
+
+### delete transactions based on the user
+DELETE http://localhost:8000/api/v1/transactions
+Content-Type: application/json
+Authorization: eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJlbWFpbCI6InN1YmVrc2h5YWtoYXJlbDkyMkBnbWFpbC5jb20iLCJpYXQiOjE3NDg2MTM1MTMsImV4cCI6MTc0ODY5OTkxM30.AmQBgt9illbJNaTrMGHL29Uqr2N7eNGnaGoEHxdDOLs
+
+["6837bdb099ed791d6b705abc", "6837c29499ed791d6b705ac6"]
