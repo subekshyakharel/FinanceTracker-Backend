@@ -1,9 +1,9 @@
 import mongoose from "mongoose";
-const MONGOURL = "mongodb://localhost:27017/finance_tracker";
+const MONGO_URL = process.env.MONGO_URL;
 
 export const connMongo = async () => {
   try {
-    const conn = await mongoose.connect(MONGOURL);
+    const conn = await mongoose.connect(MONGO_URL);
     conn && console.log("mongoDB Connected");
   } catch (error) {
     console.log(error);
